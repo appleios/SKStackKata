@@ -7,33 +7,77 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SKStack.h"
+
 
 @interface StackKataTests : XCTestCase
 
+@property (nonatomic, strong) id<SKStack> sut;
+
 @end
+
 
 @implementation StackKataTests
 
-- (void)setUp {
+- (void)setUp 
+{
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.sut = [SKStack stackWithCapacity:2];
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+- (void)tearDown
+{
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testNewlyCreateStack_ShouldBeEmptyAndSizeShouldBeZero
+{
+    XCTAssertTrue(self.sut.empty);
+    XCTAssertEqual(self.sut.size, 0);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testWhenPushedOne_ItShouldNotBeEmptyAndSizeShouldBeOne
+{
+    [self.sut push:@1];
+    XCTAssertFalse(self.sut.empty);
+    XCTAssertEqual(self.sut.size, 1);
+}
+
+- (void)testAfterPushOneAndPop_ItShouldBeEmptyAndHaveZeroSize
+{
+    [self.sut push:@1];
+    [self.sut pop];
+    XCTAssertTrue(self.sut.empty);
+    XCTAssertEqual(self.sut.size, 0);
+}
+
+- (void)testAfterPushOneAndTwo_ThenPopShouldReturnTwoAndOne
+{
+    [self.sut push:@1];
+    [self.sut push:@2];
+    XCTAssertEqual([self.sut pop], @2);
+    XCTAssertEqual([self.sut pop], @1);
+}
+
+- (void)testAttemptToPopEmptyStack_ShouldThrowUnderflowException
+{
+    XCTAssertThrowsSpecificNamed([self.sut pop], NSException, SKStackUnderflowExceptionName);
+}
+
+- (void)testAttemptToPushOnFullStack_ShouldThrowOverflowException
+{
+    id<SKStack> sut = [SKStack stackWithCapacity:1];
+    [sut push:@1];
+    XCTAssertThrowsSpecificNamed([sut push:@1], NSException, SKStackOverflowExceptionName);
+}
+
+- (void)testEmptyStack_ShouldThrowOnPushAndPop
+{
+    id<SKStack> sut = [SKStack stackWithCapacity:0];
+    XCTAssertTrue(sut.empty);
+    XCTAssertEqual(sut.size, 0);
+    XCTAssertThrowsSpecificNamed([sut push:@1], NSException, SKStackOverflowExceptionName);
+    XCTAssertThrowsSpecificNamed([sut pop], NSException, SKStackUnderflowExceptionName);
 }
 
 @end

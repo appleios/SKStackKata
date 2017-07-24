@@ -9,18 +9,32 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>All in StackKataTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>-[StackKataTests testNothing].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>C4215BF61F26857E001A5887</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 		<key>C4215C0F1F26857E001A5887</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 	</dict>
 </dict>

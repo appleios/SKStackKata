@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EDE24935C835FCAB687BF26 /* SKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDE2D2CC888252402AE1FA8 /* SKStack.m */; };
 		C4215BFC1F26857E001A5887 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4215BFB1F26857E001A5887 /* main.m */; };
 		C4215BFF1F26857E001A5887 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4215BFE1F26857E001A5887 /* AppDelegate.m */; };
 		C4215C021F26857E001A5887 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4215C011F26857E001A5887 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EDE2D03DDB175CCC32FEE98 /* SKStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStack.h; sourceTree = "<group>"; };
+		1EDE2D2CC888252402AE1FA8 /* SKStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStack.m; sourceTree = "<group>"; };
 		C4215BF71F26857E001A5887 /* StackKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4215BFB1F26857E001A5887 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4215BFD1F26857E001A5887 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				C4215C081F26857E001A5887 /* LaunchScreen.storyboard */,
 				C4215C0B1F26857E001A5887 /* Info.plist */,
 				C4215BFA1F26857E001A5887 /* Supporting Files */,
+				1EDE2D2CC888252402AE1FA8 /* SKStack.m */,
+				1EDE2D03DDB175CCC32FEE98 /* SKStack.h */,
 			);
 			path = StackKata;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				C4215C021F26857E001A5887 /* ViewController.m in Sources */,
 				C4215BFF1F26857E001A5887 /* AppDelegate.m in Sources */,
 				C4215BFC1F26857E001A5887 /* main.m in Sources */,
+				1EDE24935C835FCAB687BF26 /* SKStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
